@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Colores de COMPAS */
+    --compas-blue: #0052CC;
+    --aventura-green: #00875A;
+    --tino-orange: #FF5630;
+    --mostacho-yellow: #FFAB00;
+
+    /* Grises */
+    --text-primary: #172B4D;
+    --text-secondary: #5E6C84;
+    --bg-gray: #F4F5F7;
+  }
+
+  * {
+    @apply border-compas-gray-200;
+  }
+
+  body {
+    @apply bg-white text-compas-gray-900 font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  /* Botones */
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-primary {
+    @apply bg-compas-blue text-white hover:bg-compas-blue-600 active:bg-compas-blue-700;
+  }
+
+  .btn-secondary {
+    @apply bg-aventura-green text-white hover:bg-aventura-green-600 active:bg-aventura-green-700;
+  }
+
+  .btn-outline {
+    @apply border-2 border-compas-blue text-compas-blue hover:bg-compas-blue-50 active:bg-compas-blue-100;
+  }
+
+  .btn-ghost {
+    @apply text-compas-gray-700 hover:bg-compas-gray-50 active:bg-compas-gray-100;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-compas-gray-200 p-6;
+  }
+
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Inputs */
+  .input {
+    @apply w-full px-4 py-2 rounded-lg border border-compas-gray-300 focus:outline-none focus:ring-2 focus:ring-compas-blue focus:border-transparent transition-all;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-blue {
+    @apply bg-compas-blue-100 text-compas-blue-700;
+  }
+
+  .badge-green {
+    @apply bg-aventura-green-100 text-aventura-green-700;
+  }
+
+  .badge-orange {
+    @apply bg-tino-orange-100 text-tino-orange-700;
+  }
+
+  .badge-yellow {
+    @apply bg-mostacho-yellow-100 text-mostacho-yellow-700;
+  }
+
+  /* Container */
+  .container-compas {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
